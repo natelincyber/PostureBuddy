@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <!-- Favicon-->
+  <link rel="icon" type="image/x-icon" href="/static/img/Final_Logo.png" />
+  <!-- Google fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic"
+    rel="stylesheet" type="text/css" />
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="/static/css/styless.css" rel="stylesheet" />
+  <title>Results</title>
+</head>
+
+<body>
+
+  <!-- Navigation-->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-3" id="mainNav">
+    <div class="container px-4 px-lg-5">
+      <a class="navbar-brand" href="/" onclick="loading();">Posture Buddy</a>
+  </nav>
+  <section class="page-section bg-light">
+    <div class="container px-4 px-lg-5">
+      <h2 class="text-center mt-0">Results</h2>
+      <hr class="divider" />
+      <div class="row gx-4 gx-lg-5">
+        <div class="col-lg-6 col-md-6 text-center">
+          <div class="mt-5">
+            <h3 class="h4 mb-2">Overall Grade</h3>
+            <div class="mb-2"><img src="static/img/{{grade}}.svg" /></div>
+          </div>
+          <br>
+          <div class="mt-2">
+            <div class="container">
+              <h3 class="h4 mb-2">Focus Areas</h3>
+              <br>
+              <a class="btn btn-outline-primary btn-lg" role="button" href="#tip-{{ tip1 }}">Tip 1</a>
+              &nbsp;
+              <a class="btn btn-outline-primary btn-lg" role="button" href="#tip-{{ tip2 }}">Tip 2</a>
+              <p class="text-muted mt-3" style="text-align: center;">
+                Click a button for personalized tips
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 justify-content-center align-items-center">
+          <div class="container">
+            <div class="mt-5 text-center">
+              <h3 class="h4">Individual Scores</h3>
+              <br>
+              <section>
+                <p class="text-muted mb-1" style="text-align: center;">
+                  Crossing Arms - {{ armsPercent }}%
+                </p>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" style="width: {{ armsPercent }}%;"
+                    aria-valuenow="{{ armsPercent }}" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </section>
+              <br>
+              <section>
+                <p class="text-muted mb-1" style="text-align: center;">
+                  Crossing Legs - {{ legsPercent }}%
+                </p>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" style="width: {{ legsPercent }}%;"
+                    aria-valuenow="{{ legsPercent }}" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </section>
+              <br>
+              <section>
+                <p class="text-muted mb-1" style="text-align: center;">
+                  Leaning - {{ swayPercent }}%
+                </p>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" style="width: {{ swayPercent }}%;"
+                    aria-valuenow="{{ swayPercent }}" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </section>
+              <br>
+              <section>
+                <p class="text-muted mb-1" style="text-align: center;">
+                  Hand Gestures - {{ armsDownPercent }}%
+                </p>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" style="width: {{ armsDownPercent }}%;"
+                    aria-valuenow="{{ armsDownPercent }}" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </section>
+              <br>
+              <section>
+                <p class="text-muted mb-1" style="text-align: center;">
+                  Fidgeting - {{ fidgetPercent }}%
+                </p>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" style="width: {{ fidgetPercent }}%;"
+                    aria-valuenow="{{ fidgetPercent }}" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </section>
+              <br>
+              <section>
+                <p class="text-muted mb-1" style="text-align: center;">
+                  Focus - {{ focusPercent }}%
+                </p>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" style="width: {{ focusPercent }}%;"
+                    aria-valuenow="{{ focusPercent }}" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+        <div class="mt-5 mx-5">
+          <p id="tip-1"></p>
+          {% if tip1|int == 1 or tip2|int == 1%}
+          <h3 class="h4 mb-2"><mark>1. Keep your arms busy</mark></h3>
+
+          {%  else %}
+          <h3 class="h4 mb-2">1. Keep your arms busy</h3>
+
+          {% endif %}
+          <p class="text-muted mb-0">
+            Moving your arms allows you to direct your audience's attention to where you want it to be.
+            For example, you could be pointing at your presentation, or holding a object that pertains to your
+            main topic. In any case, your arms are vital tools you can use to your advantage.
+            It's okay to keep your arms down at your sides when you absolutely have to, but if you find yourself not
+            using
+            them enough, here are some tips to help you out: </p> <br>
+          <div class="container">
+            <p class="text-muted mb-0">
+              1. Make a slides presentation or poster. Making a presentation or poster gives
+              you a physical object to
+              point
+              at. You can point to important points on your presentation while speaking to emphasize them. <br>
+              <br>
+              2. Use your fingers to depict numbers. If you are talking about a number below 5, hold up the correct
+              number
+              of fingers. <br>
+              <br>
+              3. Show your hands. If you're at a podium, either gesture with your hands or lightly rest them on the
+              top.
+              If you're right in front of the audience, make sure not to hold your hands behind your back.
+            </p>
+          </div>
+          <br id="tip-2">
+          {% if tip1|int ==  2 or tip2|int == 2%}
+          <h3 class="h4 mb-2"><mark>2. Stand straight or walk around the room</mark></h3>
+
+          {%  else %}
+          <h3 class="h4 mb-2">2. Stand straight or walk around the room</h3>
+
+          {% endif %}
+          <p class="text-muted mb-0">
+            Walking or standing straight make you look taller and more formal, especially compared to leaning or
+            slouching. Bad posture is extremely easy to detect and can have negative impacts on your presentation.
+            Once learned, keeping good posture is extremely easy to maintain. Here are some tips to help you out: <br>
+            <br>
+            <div class="container">
+              <p class="text-muted mb-0">
+                1. Practice stading straight for the duration of your presentation. For this excercise, stand up with
+                your
+                back straight,but don't talk. Just focus on keeping your body as straight as possible. After you are
+                comfortable with that, practice your presentation like normal and use Posture Buddy to see if you are
+                still
+                leaning.<br>
+                <br>
+                2. Relax! People tend to lean from side to side when they are tensed or feel presured. Take a couple of
+                deep
+                breaths before your presentation and speak slowly. <br>
+              </p>
+            </div>
+            <br id="tip-3">
+            {% if tip1|int ==  31 or tip2|int == 31%}
+            <h3 class="h4 mb-2"><mark>3. Move your hands away from each other</mark></h3>
+
+            {% else %}
+            <h3 class="h4 mb-2">3. Move your hands away from each other</h3>
+
+            {% endif %}
+            <p class="text-muted mb-0">
+              Fidgeting is a very common indicator of fear or stage fright. Most of the time, people don't even realize
+              they
+              are fidgeting with their hands until it is too late. However, once caught, fidgeting is a really easy
+              habit
+              to
+              correct. Here are some tips to help you to correct fidgeting:
+            </p>
+            <br>
+            <div class="container">
+              <p class="text-muted mb-0">
+                1. Concentrate on keeping your hands apart. While practicing, make it your top priority to keep your
+                hands
+                at
+                least body width apart. This way, your hands don't have an opportunity to fidget with each other. <br>
+                <br>
+                2. Relax! Take a couple deep breaths before presenting. Don't focus on the people looking at you.
+                Instead,
+                focus on your presentation and think about keeping your hands apart from each other. <br> <br>
+                3. Incorporate hand gestures into your presentation. The busier your hands are, the less chance your
+                hands
+                have at fidgeting. Keep those hands busy!
+              </p>
+            </div>
+            <br id="tip-4">
+            {% if tip1|int == 41 or tip2|int == 41%}
+            <h3 class="h4 mb-2"><mark>4. Make your audience your top priority</mark></h3>
+
+            {%  else %}
+            <h3 class="h4 mb-2">4. Make your audience your top priority</h3>
+
+            {% endif %}
+            <p class="text-muted mb-0">
+              Many times, people spend too much time looking at their presentation and fail to acknowledge their
+              audience.
+              Your audience will feel more welcomed and therefore more inclined to agree with your points. Here are a
+              couple
+              tips to help you look at your audience more: <br> <br>
+              <div class="container">
+                <p class="text-muted mb-0">
+                  1. Don't be afraid of your audience. Remember, the audience won't throw tomatoes at you if you make a
+                  mistake.
+                  The people in your audience are interested in what you have to say and are more likely to support you
+                  rather
+                  than boo you. <br> <br>
+                  2. Your presentation is not the audience. Its very common for presenters to look at their slides and
+                  read
+                  directly off them, forgetting to look at their audience. To combat this, try to memorize your speech
+                  or
+                  prepare notecards beforehand so
+                  that
+                  you can look at your audience more. <br> <br>
+                  3. Your webcam is your audience. During virtual presentations, many people get confused because they
+                  are
+                  not
+                  presenting in front of a live audience. To combat this, keep in mind that your camera is your
+                  audiece's
+                  eyes.
+                  They can't
+                  look at you in any other way.
+                </p>
+              </div>
+            </p>
+            <br id="tip-5">
+            {% if tip1|int ==  5 or tip2|int == 5%}
+            <h3 class="h4 mb-2"><mark>5. Walk around or stand tall</mark></h3>
+
+            {%  else %}
+            <h3 class="h4 mb-2">5. Walk around or stand tall</h3>
+
+            {% endif %}
+            <p class="text-muted mb-0">
+              Crossed legs are extremely visible to your andience and divert your audience's attention away from your
+              presentation. In addition, you could also lose your balance and trip on stage. Here are some tips to help
+              you
+              stop crossing your legs: <br><br>
+            </p>
+            <div class="container">
+              <p class="text-muted mb-0">
+                1. Practice standing tall without speaking. Spend a couple minutes concentrating on keeping your legs as
+                straight as possible. After you
+                feel comfortable with yourself, present like normal and use Posture Buddy to see if you are still
+                crossing
+                your legs.<br><br>
+                2. Walk around. By moving around, you are giving your legs something to do, lowering the chances of them
+                crossing. Make sure to keep eye contact with
+                your audience while walking!
+              </p>
+            </div>
+            <br id="tip-6">
+            {% if tip1|int == 6 or tip2|int == 6%}
+            <h3 class="h4 mb-2"><mark>6. Move your arms around</mark></h3>
+
+            {%  else %}
+            <h3 class="h4 mb-2">6. Move your arms around</h3>
+
+            {% endif %}
+            <p class="text-muted mb-0">
+              Crossing your arms gives your audience a negative connotation of you and your presentation, making them
+              much
+              less likely to agree with your opinion.
+              Many times, crossing your arms usually stems from not using your hands during your presentation. Heres how
+              you
+              can fix that: <br> <br>
+              <div class="container">
+                <p class="text-muted mb-0">
+                  1. Incorporate hand gestures into your presentation. Doing this keeps your hands busy and therefore
+                  lowers
+                  your chances of crossing them
+                  during your presentation.<br><br>
+                  2. Use a physical presentation medium. By using something like a poster or a projected Google Slides
+                  presentation, you have something to point to
+                  during your presentation. This also lowers your chances of crossing your arms.
+                </p>
+              </div>
+            </p>
+        </div>
+      </div>
+      <br>
+      <br>
+      <!-- Button trigger modal -->
+      <div class="container">
+        <div class="text-center">
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Stats For Nerds
+          </button>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Stats For Nerds</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-1">
+                    <p class="text-muted"></p>
+                  </div>
+                  <div class="col-4">
+                    <p class="text-muted">Crossing Arms</p>
+                  </div>
+                  <div class="col-4">
+                    <p class="text-muted">{{armscounter}}</p>
+                  </div>
+                  <div class="col-2">
+                    <p class="text-muted">{{ 100 - armsPercent }}%</p>
+                  </div>
+                  <div class="col-1">
+                    <p class="text-muted"></p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-1">
+                    <p class="text-muted"></p>
+                  </div>
+                  <div class="col-4">
+                    <p class="text-muted">Crossing Legs</p>
+                  </div>
+                  <div class="col-4">
+                    <p class="text-muted">{{legscounter}}</p>
+                  </div>
+                  <div class="col-2">
+                    <p class="text-muted">{{ 100 - legsPercent }}%</p>
+                  </div>
+                  <div class="col-1">
+                    <p class="text-muted"></p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-1">
+                    <p class="text-muted"></p>
+                  </div>
+                  <div class="col-4">
+                    <p class="text-muted">Leaning</p>
+                  </div>
+                  <div class="col-4">
+                    <p class="text-muted">{{swaycounter}}</p>
+                  </div>
+                  <div class="col-2">
+                    <p class="text-muted">{{ 100 - swayPercent }}%</p>
+                  </div>
+                  <div class="col-1">
+                    <p class="text-muted"></p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-1">
+                    <p class="text-muted"></p>
+                  </div>
+                  <div class="col-4">
+                    <p class="text-muted">Hand Gestures</p>
+                  </div>
+                  <div class="col-4">
+                    <p class="text-muted">{{armsdowncounter}}</p>
+                  </div>
+                  <div class="col-2">
+                    <p class="text-muted">{{ 100 - armsDownPercent }}%</p>
+                  </div>
+                  <div class="col-1">
+                    <p class="text-muted"></p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-1">
+                    <p class="text-muted"></p>
+                  </div>
+                  <div class="col-4">
+                    <p class="text-muted">Fidgeting</p>
+                  </div>
+                  <div class="col-4">
+                    <p class="text-muted">{{fidgetcounter}}</p>
+                  </div>
+                  <div class="col-2">
+                    <p class="text-muted">{{ 100 - fidgetPercent }}%</p>
+                  </div>
+                  <div class="col-1">
+                    <p class="text-muted"></p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-1">
+                    <p class="text-muted"></p>
+                  </div>
+                  <div class="col-4">
+                    <p class="text-muted">Focus</p>
+                  </div>
+                  <div class="col-4">
+                    <p class="text-muted">{{focuscounter}}</p>
+                  </div>
+                  <div class="col-2">
+                    <p class="text-muted">{{ 100 - focusPercent }}%</p>
+                  </div>
+                  <div class="col-1">
+                    <p class="text-muted"></p>
+                  </div>
+                </div>
+                <hr class="divider" />
+                <div class="row">
+                  <div class="col-2">
+                    <p class="text-muted"></p>
+                  </div>
+                  <div class="col-4">
+                    <p class="text-muted text-center"><b>Total Time</b></p>
+                  </div>
+                  <div class="col-4">
+                    <p class="text-muted text-center"><b>{{convertedTime}}</b></p>
+                  </div>
+                  <div class="col-2">
+                    <p class="text-muted"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  </section>
+
+
+
+  <footer class=" bg-light py-5">
+    <div class="container px-4 px-lg-5">
+      <div class="small text-center text-muted">Copyright &copy;
+        <script type="text/javascript">
+          document.write(new Date().getFullYear());
+        </script> - Posture Buddy</div>
+    </div>
+  </footer>
+  <!-- Core theme JS-->
+  <script src="/static/js/resultss.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+  </script>
+
+</body>
+
+</html>

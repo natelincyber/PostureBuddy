@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+{% block head %} {% endblock %} {% block title%}Demo{%
+endblock %} {% block body %}
+<style type="text/css">
+  html {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  .bg {
+    animation: slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+    bottom: 0;
+    left: -50%;
+    opacity: .5;
+    position: fixed;
+    right: -50%;
+    top: 0;
+    z-index: -1;
+  }
+
+  .bg2 {
+    animation-direction: alternate-reverse;
+    animation-duration: 4s;
+  }
+
+  .bg3 {
+    animation-duration: 5s;
+  }
+
+  .content {
+    background-color: rgba(255, 255, 255, .8);
+    border-radius: .25em;
+    box-shadow: 0 0 .25em rgba(0, 0, 0, .25);
+    box-sizing: border-box;
+    left: 50%;
+    padding: 10vmin;
+    position: fixed;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  h1 {
+    font-family: monospace;
+  }
+
+  @keyframes slide {
+    0% {
+      transform: translateX(-25%);
+    }
+
+    100% {
+      transform: translateX(25%);
+    }
+  }
+
+  .one {
+    opacity: 0;
+    -webkit-animation: dot 1.3s infinite;
+    -webkit-animation-delay: 0.0s;
+    animation: dot 1.3s infinite;
+    animation-delay: 0.0s;
+    color: rgb(255, 0, 0);
+  }
+
+  @-webkit-keyframes dot {
+    0% {
+      opacity: 0;
+    }
+
+    50% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes dot {
+    0% {
+      opacity: 0;
+    }
+
+    50% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+</style>
+
+<section class="page-section bg-dark text-white">
+  <div class="container px-4 px-lg-5 text-center">
+    <h3 id="recorder">Recording
+      <svg height="100" width="30">
+        <circle fill="#ff0000" stroke="none" cx="20" cy="50" r="10">
+          <animate attributeName="opacity" dur="1s" values="0;1;0" repeatCount="indefinite" begin="0.1" />
+        </circle>
+      </svg>
+    </h3>
+
+    <img id="video" href="preload" style="
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 2%;
+      " src="{{ url_for('video_feed') }}" />
+    <br />
+    <br>
+    <a id="recorder" class="btn btn-light btn-xl" href="preloader">Restart</a> &nbsp; &nbsp;
+    <a id="recorder" class="btn btn-light btn-xl" href="analytics">I'm Done!</a> 
+    
+  </div>
+  <br />
+  <p id="recorder" class="text-muted mb-5" style="text-align: center">
+    Prefer keyboard shortcuts? Press enter to finish!
+  </p>
+</section>
+<script type="text/javascript">
+  document.addEventListener("keypress", function (event) {
+    if (event.keyCode == 13) {
+      window.location = "/analytics";
+    }
+  });
+</script>
+{% endblock %}

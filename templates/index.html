@@ -1,0 +1,101 @@
+{% extends 'base.html' %} {% block head %} {% endblock %} {% block title
+%}Posture Buddy{% endblock %} {% block body %}
+<header class="masthead">
+  <div class="container px-4 px-lg-5 h-100">
+    <div class="
+        row
+        gx-4 gx-lg-5
+        h-100
+        align-items-center
+        justify-content-center
+        text-center
+      ">
+      <div class="col-lg-8 align-self-end">
+        <h1 class="text-white font-weight-bold">Posture Buddy</h1>
+        <hr class="divider" />
+      </div>
+      <div class="col-lg-8 align-self-baseline">
+        <p class="text-white-75 mb-5 px-5">
+          Harnessing the power of machine learning to empower members in our
+          community to speak up about the issues they face every day.
+        </p>
+        <a class="btn btn-primary btn-xl" href="#about">Find Out More</a>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- About-->
+<section class="page-section bg-primary" id="about">
+  <div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+      <div class="col-lg-8 text-center">
+        <h2 class="text-white mt-0">What is Posture Buddy?</h2>
+        <hr class="divider divider-light" />
+        <p class="text-white-75 mb-4">
+          We noticed that many members in our community fail to speak up about
+          issues that affect them everyday, either due to fear or a lack of
+          knowledge about proper presentation etiquette. With Posture Buddy,
+          these individuals can focus on creating a perfect proposal without
+          having to worry about the formalities. Our algorithm detects many
+          common forms of bad posture and shows aspiring presenters how to fix
+          them in a easy to understand format. Click the button to begin!
+        </p>
+        <a class="btn btn-light btn-xl" href="preloader">Get Started!</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Services-->
+<section class="page-section" id="services">
+  <div class="container px-4 px-lg-5">
+    <h2 class="text-center mt-0">Why Us?</h2>
+    <hr class="divider" />
+    <div class="row gx-4 gx-lg-5">
+      <div class="col-lg-3 col-md-6 text-center">
+        <div class="mt-5">
+          <div class="mb-2"><i class="bi-cursor fs-1 text-primary"></i></div>
+          <h3 class="h4 mb-2">Easy to Use</h3>
+          <p class="text-muted mb-0">
+            Our software automatically detects bad posture without any extra
+            setup or downloads. Just hit the get started button to begin!
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 text-center">
+        <div class="mt-5">
+          <div class="mb-2">
+            <i class="bi-speedometer fs-1 text-primary"></i>
+          </div>
+          <h3 class="h4 mb-2">Fast</h3>
+          <p class="text-muted mb-0">
+            All of our analysis is done in real time so you don't have to worry
+            about waiting for hours at a time to get results.
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 text-center">
+        <div class="mt-5">
+          <div class="mb-2"><i class="bi-puzzle fs-1 text-primary"></i></div>
+          <h3 class="h4 mb-2">Custom Reports</h3>
+          <p class="text-muted mb-0">
+            When you are finished with your presentation, Posture Buddy creates
+            a custom report tailored specifically to the user's needs.
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 text-center">
+        <div class="mt-5">
+          <div class="mb-2"><i class="bi-heart fs-1 text-primary"></i></div>
+          <h3 class="h4 mb-2">Open Source</h3>
+          <p class="text-muted mb-0">
+            <!--add more text later-->
+            Check out the Posture Buddy respository on GitHub! Feel free to modify this
+            project to suit your needs.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
