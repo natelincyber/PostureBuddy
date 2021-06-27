@@ -1,0 +1,12 @@
+1. Loading screen
+2. Detections:
+    - ✓ sway
+    - tension (shoulders are up)
+    - ✓ hands down
+        - hands down all the time - please move your hands more 
+    - ✓ hands touching each other (assume fidgeting)
+    - ✓ looking at the camera (looking straight)
+3. Fancy gif -> "we are analyzing your presentation and generating a custom report"
+4. results.html -> make it look nice and readable
+5. title screen
+6. logo 
