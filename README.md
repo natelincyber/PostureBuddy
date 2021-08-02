@@ -26,7 +26,7 @@ We noticed that many members in our community fail to speak up about issues that
 - Latest version of Python installed
 - Use pip to install [medapipe](https://pypi.org/project/mediapipe/), [flask](https://pypi.org/project/Flask/), and [opencv](https://pypi.org/project/opencv-python/)
 - pip is automatically installed on your PC as part of your Python installation. Simply type this into your terminal
-    - ``` python -m pip install [LIRBARY TO INSTALL] ```
+    - ``` python3 -m pip install [LIRBARY TO INSTALL] ```
 ## Instructions to Use
 1. Download all the files from this repository into a folder on your computer
 2. Open your folder and run main.py
